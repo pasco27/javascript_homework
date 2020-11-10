@@ -2,24 +2,46 @@
 var tbody = d3.select("tbody");
 
 // from data.js
-var tableData = data;
+var ufoSightings = data;
 // console.log(tableData)
 
+
+// Get the value property of the select element
+var selectValue = ufoSightings.property('value');
+
+
+
+// select the button for users to submit
+var button = d3.select('#filter-btn');
+
+// when we get a filter date action
+button.on('click') = d3.select('#datetime');
+
 // loop over the data to append to the website
-data.forEach(tableData => {
+tableData.forEach(ufoSightings => {
     //creates a mew rpw for each object
     var row = tbody.append('tr');
     //loop inside of dataset loop that appends each value item to its column
-    Object.values(tableData).forEach(([key, value]) => {
+    Object.values(ufoSightings).forEach(value => {
         row.append('td').text(value);
-        console.log(key, value);
-    }
+        // console.log(key, value);
+    });
+});
 
 
 
+// complete click handler for the form
+button.on('click', function () {
+    // select input element and get the HTML node
+    var inputElement = d3.select('#datetime');
 
+    // get value property of the input element
+    var inputValue = inputElement.property('value');
 
+    // use form input to filter data by date
+    var dataFilter = tableData.filter(sighting => sighting.datetime === inputValue)
 
+    console.log(dataFilter)
 
 // YOUR CODE HERE!
 
@@ -78,3 +100,4 @@ data.forEach(tableData => {
 //         cell.text(value);
 //     });
 // });
+
