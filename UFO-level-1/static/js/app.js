@@ -10,6 +10,8 @@ var button = d3.select("#filter-btn");
 // Complete the click handler for the form
 button.on('click', function () {
 
+    d3.event.preventDefault();
+
     // Select the date element
     var selectElement = d3.select('#datetime');
 
@@ -33,4 +35,18 @@ button.on('click', function () {
             // console.log(key, value);
         });
     });
+});
+
+
+// when reset button is Selected
+var resetButton = d3.select("#reset-btn");
+
+// copied from above 
+resetButton.on('click', function () {
+
+    d3.event.preventDefault();
+
+    // I think this just blanks the table data
+    var tbody = d3.select('tbody').text(' ');
+
 });
