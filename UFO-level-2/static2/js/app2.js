@@ -4,6 +4,49 @@ var tbody = d3.select('tbody');
 var ufoSightings = data;
 // console.log(tableData)
 
+
+// - So in this one, what I think I want to do on the filter button click is:
+// Date OR City OR State OR Country OR Shape
+
+
+// Here I will want to create a function that picks up which cell contains data
+// from below....
+
+// loop over the data to append to the website
+filtered.forEach(ufoSightings => {
+    var row = tbody.append('tr');
+    Object.values(ufoSightings).forEach(value => {
+        row.append('td').text(value);
+    })
+});
+
+
+// Creating an empty object for the table data to reside.  Will later append it to the page.
+multiTable = {};
+
+// Create a function that will check for an item in each filter button
+// Which form has a value?
+
+function checkFilter() {
+    // check each form, but I have each form class as 'form-control', 
+    // so do they each need an individual class so I can tell them apart? 
+
+    // if
+    // d3.select('each-form...').property('value');
+    //
+    // else
+    // moe on to next form area to check..
+
+
+
+}
+
+
+
+
+
+
+
 // Select the 'filter table' button
 var button = d3.select("#filter-btn");
 
