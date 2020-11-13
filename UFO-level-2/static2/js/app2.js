@@ -35,11 +35,11 @@ function checkFilter() {
     // d3.select('each-form...').property('value');
     //
     // else
-    // moe on to next form area to check..
-
-
+    // move on to next form area to check..
 
 }
+
+
 
 
 
@@ -94,3 +94,25 @@ resetButton.on('click', function () {
     var tbody = d3.select('tbody').text(' ');
 
 });
+
+
+
+
+
+// Once all this is figured out, append filtered data to table 
+
+
+// // select the table from index.html
+// var table = d3.select("ufo-table");
+
+// // use d3 to select the table body only
+// var tbody = d3.select('tbody');
+
+// // append one table row `tr` to the table body 
+// var row = tbody.append('tr');
+
+// // append one cell for the new... 
+// row.append('td').text(newRow[0]);
+
+// // append one cell for the new...
+// row.append('td').text(rewRow[1]);
